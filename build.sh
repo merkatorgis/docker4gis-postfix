@@ -2,4 +2,4 @@
 
 docker image build \
 	--build-arg DOCKER_USER="$DOCKER_USER" \
-	-t "$IMAGE" .
+	-t "$DOCKER_IMAGE" .
