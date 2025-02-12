@@ -2,7 +2,7 @@
 set -x
 
 # if @buildtime, save for runtime
-if ! [ "$DOCKER_USER" ]; then
+if ! [ "$DOCKER_CONTAINER" ]; then
 	echo "$0" "$@" >>/onstart
 	exit
 fi
@@ -22,7 +22,7 @@ chmod +x "$conf"
 # that will run the scripts, so that the user can write in it.
 logdir=/runner/$user$(dirname "$script")
 mkdir -p "$logdir"
-chown --recursive "$user" "$logdir"
+chown --recursive "$user:$user" "$logdir"
 
 # see /entrypoint
 runner=$DOCKER_USER
