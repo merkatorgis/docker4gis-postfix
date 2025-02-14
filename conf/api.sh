@@ -30,7 +30,7 @@ runner=$DOCKER_USER
 echo "$user   unix  -       n       n       -       -       pipe
       user=$user argv=/usr/local/bin/$runner $script $*" >>/etc/postfix/master.cf
 
-postconf -e 'transport_maps=hash:/etc/postfix/transport'
+postconf -e 'transport_maps=lmdb:/etc/postfix/transport'
 
 echo "$user@$DESTINATION $user:" >>/etc/postfix/transport
 postmap /etc/postfix/transport
