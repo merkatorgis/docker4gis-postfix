@@ -1,4 +1,4 @@
-FROM docker4gis/postfix:v0.0.5
+FROM docker4gis/postfix:v0.0.6
 
 ENV DESTINATION=example.com
 # And/or set ${DOCKER_USER}_POSTFIX_DESTINATION at run time
